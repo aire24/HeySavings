@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<services:BasePage  xmlns:services="clr-namespace:HeySavings.Services"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+    x:Class="HeySavings.Views.HelpPage"
+    Title="Help">
+    <ContentPage.Content>
+         <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+
+        </Grid.RowDefinitions>
+
+        
+            <pancake:PancakeView
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+            </pancake:PancakeView>
+             <StackLayout
+                 HorizontalOptions="Center"
+               VerticalOptions="Center"
+                 Grid.RowSpan="2">
+
+        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably. 
+               NEEDS(50%)
+               -housig
+               -rent
+               -food
+               -gorgeries
+               -transportation
+               -bills
+               -utilities
+               WANTS(30%)
+               -dining out
+               -shopping
+               -travel
+               -gadgets
+               SAVINGS(20%)
+               -savings
+               -emergency fund
+               -loan repayment"
+               Margin="20,0"
+               TextColor="{StaticResource OffBlack}"
+               FontFamily="LocalFont"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="End"
+                FontSize="25"/>
+                 </StackLayout>
+        
+            </Grid>
+    </ContentPage.Content>
+</services:BasePage>

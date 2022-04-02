@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:HeySavings.CustomControls" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="HeySavings.Views.SpendingDetailPage"
+    
+    Background="White"
+    Title="Spending Details">
+   
+          <ContentPage.Content>
+          <Grid VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="0.8*" />
+               
+            </Grid.RowDefinitions>
+
+         
+            <pancake:PancakeView
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+                </pancake:PancakeView>
+
+            
+
+
+            <StackLayout VerticalOptions="FillAndExpand" 
+                  Margin="30,20,30,40"
+                         Spacing="5"
+                      >
+                <Label 
+                       FontFamily="LocalFont"
+                       
+                       
+                       
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}"
+                       FontSize="Medium">
+
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Heading}" TextDecorations="Underline"/>
+                            <Span Text=" ("/>
+                            <Span Text="{Binding TotalBudget, StringFormat='{0:F2}'}"/>
+                            <Span Text=" "/>
+                            <Span Text="{Binding b.CurrencySymbol}"/>
+                            <Span Text=")"/>
+
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+
+                <Grid ColumnDefinitions="1*,1.1*,0.7*,0.3*,0.3*"
+                      RowDefinitions=".06*,*"
+              
+                      VerticalOptions="Start"
+                      >
+                    <BoxView HeightRequest="1"
+                             VerticalOptions="Start"
+                             Grid.ColumnSpan="5"
+                             BackgroundColor="Black"/>
+                     <BoxView HeightRequest="1"
+                             VerticalOptions="Start"
+                             Grid.ColumnSpan="5"
+                              Grid.Row="1"
+                             BackgroundColor="Black"
+                              />
+                
+                    <Label Text="Name" 
+                            FontFamily="LocalFont"
+                           
+                           TextColor="{StaticResource OffBlack}"
+                       FontAttributes="Bold"/>
+                    <Label Text="Description" Grid.Column="1" 
+                            FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+                       FontAttributes="Bold"/>
+
+                    <Label Text="Amount" Grid.Column="2" 
+                            FontFamily="LocalFont"
+
+                           TextColor="{StaticResource OffBlack}"
+                       FontAttributes="Bold"/>
+
+                    <Image Source="edit.png"
+                           Margin="0,2,0,0"
+                           Grid.Column="3"/>
+
+
+                    <Image Source="bin"
+                            Margin="0,2,0,0"
+                           Grid.Column="4"/>
+
+
+                <CollectionView Grid.Row="1"
+                                Margin="0,5,0,0"
+                                ItemsSource="{Binding LstSpendings}"
+                                VerticalOptions="FillAndExpand"
+                                Grid.ColumnSpan="5"
+                                x:Name="cv"
+                    >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout 
+                                         HeightRequest="35">
+                            <Grid ColumnDefinitions="1*,1.1*,0.7*,0.3*,0.3*"
+
+                                  VerticalOptions="Start">
+
+                                <Label Text="{Binding spendingName}"
+                                        FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+                                       />
+
+
+                                <Label Text="{Binding spendingDescription}"
+                                        FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+                                       Grid.Column="1"/>
+
+
+                                <Label Text="{Binding amount}"
+                                        FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+
+                                       HorizontalTextAlignment="Center"
+                                       Grid.Column="2"/>
+
+                                <ImageButton Source="edit.png"
+                                       VerticalOptions="Start"
+                                       Padding="2,0"
+                                             Command="{Binding BindingContext.Edit, Source={x:Reference Name=cv}}"
+                                             CommandParameter="{Binding .}"
+                        BackgroundColor="Transparent"
+                           Margin="0,2,0,0"
+                           Grid.Column="3"/>
+
+
+                    <ImageButton
+                        Padding="2,0"
+                        BackgroundColor="Transparent"
+                        Source="bin"
+                           VerticalOptions="Start"
+                            Margin="0,2,0,0"
+                        Command="{Binding BindingContext.Delete, Source={x:Reference Name=cv}}"
+                                                                        CommandParameter="{Binding .}"
+
+                           Grid.Column="4"/>
+
+                            </Grid>
+                                  <BoxView HeightRequest="0.4"
+                         BackgroundColor="Gray"/>
+                                </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    
+                </CollectionView>
+                                    </Grid >
+              
+
+            </StackLayout>
+
+            
+
+            <StackLayout
+                VerticalOptions="Center"
+                Grid.Row="1">
+                <Label Margin="0,0,0,20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}"
+                    FontFamily="LocalFont"
+                    FontSize="Large">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Remaining Budget: "/>
+                            <Span Text="{Binding RemBudget, StringFormat='{0:F2}'}"/>
+                            <Span Text=" "/>
+                            <Span Text="{Binding b.CurrencySymbol}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            <ImageButton 
+                    CornerRadius="20"
+                   HeightRequest="80"
+                    
+                    Command="{Binding AddNew}"
+                   BackgroundColor="Transparent"
+                    Source="add"
+                    HorizontalOptions="FillAndExpand"/>
+                <Label Text="Add New"
+                       FontFamily="LocalFont"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"
+                       FontSize="Large"
+                       />
+                </StackLayout>
+                    <Grid
+                VerticalOptions="FillAndExpand"
+                   Grid.RowSpan="2"
+                IsVisible="{Binding isLoading}"
+                >
+                <StackLayout
+                     BackgroundColor="Black" 
+                         Opacity="0.5"
+                    ></StackLayout>
+                <StackLayout
+              
+                VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True"
+                                       HeightRequest="50"
+                                       
+                                       Margin="0,20,0,-5"/>   
+                <Label Text="Please Wait..."
+                       FontFamily="LocalFont"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+                </StackLayout>
+
+            </Grid>
+           
+          </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

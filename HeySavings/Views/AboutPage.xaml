@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<services:BasePage  xmlns:services="clr-namespace:HeySavings.Services"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HeySavings.Views.AboutPage"
+             xmlns:vm="clr-namespace:HeySavings.ViewModels"
+             BackgroundColor="White"
+             
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+
+        </Grid.RowDefinitions>
+
+        
+            <pancake:PancakeView
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+            </pancake:PancakeView>
+        <Label Text="Welcome To"
+               FontFamily="LocalFont"
+               TextColor="{StaticResource OffBlack}"
+               HorizontalOptions="Center"
+               VerticalOptions="End" FontSize="50"/>
+
+        <Grid VerticalOptions="EndAndExpand"
+              HorizontalOptions="FillAndExpand">
+
+        </Grid>
+
+
+        <ImageButton BackgroundColor="Transparent"
+                     Grid.Row="1"
+                     Grid.RowSpan="2"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     HeightRequest="150"
+                     CornerRadius="75"
+                     Source="Logo"/>
+
+
+        <Label Grid.Row="2"
+               TextColor="{StaticResource OffBlack}"
+               HorizontalOptions="Center"
+
+               VerticalOptions="End" FontSize="Large">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="hey" FontAttributes="Bold" FontSize="40" FontFamily="LocalFont"/>
+                    <Span Text="Savings" FontSize="35" FontFamily="LocalFont"/>
+                </FormattedString>
+                
+            </Label.FormattedText>
+        </Label>
+
+        <ImageButton BackgroundColor="Transparent"
+                     Grid.Row="3"
+                     HorizontalOptions="End"
+                     HeightRequest="50"
+                     Margin="30"
+                     Source="right_arrow"
+                     Command="{Binding FirstPageCommand}"/>
+
+
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="End"
+                     HorizontalOptions="Center"
+                      Grid.Row="3"
+                     Spacing="-10"
+                       Margin="10">
+        <Frame Padding="4"
+               Margin="10"
+               CornerRadius="10"
+               BackgroundColor="Black"
+             />
+
+             <Frame Padding="4"
+               Margin="10"
+               CornerRadius="10"
+                    BorderColor="Black"
+               BackgroundColor="White"
+             />
+
+             <Frame Padding="4"
+               Margin="10"
+               CornerRadius="10"
+                     BorderColor="Black"
+               BackgroundColor="White"
+             />
+
+        </StackLayout>
+            </Grid>
+
+</services:BasePage>

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:customcontrols="clr-namespace:HeySavings.CustomControls" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Class="HeySavings.Views.AddEditPage"
+    >
+      <ContentPage.Content>
+          <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="0.8*" />
+               
+            </Grid.RowDefinitions>
+
+         
+            <pancake:PancakeView
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+                </pancake:PancakeView>
+
+             
+
+
+            <StackLayout VerticalOptions="Start" 
+                  Margin="30,30,30,40"
+                      >
+
+
+                <StackLayout Grid.Row="1"
+                             Spacing="0"
+                             Margin="0,5,0,0"
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Name"
+                           Margin="10,0"
+                           FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"/>
+                    <Frame Padding="10,0"
+                           CornerRadius="15">
+                    <customcontrols:EntryBlack 
+                           
+                        ReturnType="Next"
+                        Text="{Binding Name, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"/>
+
+                        </Frame>
+                  
+                </StackLayout>
+                  <StackLayout Grid.Row="2"
+                               Spacing="0"
+                             Margin="0,10"
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Description"
+                           Margin="10,0,10,0"
+                           FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"/>
+
+                          <Frame Padding="10,0"
+                           CornerRadius="15">
+                      <customcontrols:BorderLessEditor HeightRequest="150"
+                           TextColor="Black"
+                            Text="{Binding Description, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                              
+                           PlaceholderColor="DarkGray"/>
+                              </Frame>
+                     
+                </StackLayout>
+
+                 <StackLayout Grid.Row="3"
+                               Spacing="0"
+                               Margin="0,5"
+
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Amount"
+                           Margin="10,0"
+                           FontFamily="LocalFont"
+                           
+                           TextColor="{StaticResource OffBlack}"/>
+                      <Frame Padding="10,0"
+                           CornerRadius="15">
+                     <customcontrols:EntryBlack 
+                           
+                           TextColor="Black"
+                        Keyboard="Numeric"
+                        ReturnType="Done"
+                            Text="{Binding Amount, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                           PlaceholderColor="DarkGray"/>
+                    </Frame>
+                </StackLayout>
+
+               
+
+            </StackLayout>
+
+            
+
+            
+            <Button Grid.Row="1"
+                    CornerRadius="20"
+                   Margin="50,0"
+                    VerticalOptions="Center"
+                    Command="{Binding SaveUpdate}"
+                    Text="Save"
+                    FontFamily="LocalFont"
+                    BackgroundColor="{StaticResource OffBlack}"
+                    HorizontalOptions="FillAndExpand">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsEdit}" Value="True">
+                        <Setter Property="Text" Value="Update"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+           
+          </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

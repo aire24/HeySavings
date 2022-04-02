@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<services:BasePage  xmlns:services="clr-namespace:HeySavings.Services"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="White"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:customcontrols="clr-namespace:HeySavings.CustomControls"
+             x:Class="HeySavings.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="0.8*" />
+               
+            </Grid.RowDefinitions>
+
+         
+            <pancake:PancakeView
+                InputTransparent="True"
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+                </pancake:PancakeView>
+            
+            
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Spacing="20"
+                         Margin="0,0,0,-25"
+                         VerticalOptions="End">
+            <Button CornerRadius="20"
+                    Text="SIGNUP"
+                    Command="{Binding RegisterCommand}"
+                    Padding="40,0"
+                    FontFamily="LocalFont"
+                    BackgroundColor="{StaticResource OffBlack}"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"/>
+
+              
+             <Button CornerRadius="20"
+                    Text="Login "
+                    Command="{Binding LoginCommand}"
+
+                     FontFamily="LocalFont"
+                     Padding="45,0"
+                    BackgroundColor="{StaticResource OffBlack}"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"/>
+                </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Margin="0,30,0,0"
+                VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="OR LOGIN WITH"
+                       FontFamily="LocalFont"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,10,0,0"
+                         Spacing="30"
+                         VerticalOptions="Center" HorizontalOptions="Center">
+                <ImageButton Source="search.png"
+                             BackgroundColor="Transparent"
+                             HeightRequest="60"
+                             BorderWidth="1"
+                               Padding="10"
+                              CornerRadius="10"
+                              BorderColor="{StaticResource OffBlack}"/>
+
+                 <ImageButton Source="facebook.png"
+                             BackgroundColor="Transparent"
+                              BorderWidth="1"
+                              HeightRequest="60"
+                              Padding="10"
+                              CornerRadius="10"
+                              BorderColor="{StaticResource OffBlack}"/>
+            </StackLayout>
+                </StackLayout>
+
+            
+            <Grid VerticalOptions="End" 
+                  Margin="30,30,30,10"
+                      RowDefinitions="*,*,*,*">
+
+                <Label Text="Login"
+                       FontFamily="LocalFont"
+
+                       TextColor="{StaticResource OffBlack}"
+                       FontSize="Large"/>
+
+
+                <StackLayout Grid.Row="1"
+                             Spacing="0"
+                             HorizontalOptions="FillAndExpand">
+
+                    <Label Text="Email"
+                           FontFamily="LocalFont"
+
+                           TextColor="{StaticResource OffBlack}">
+                       
+                        </Label>
+                    
+                    <customcontrols:BorderLessEntry  Placeholder="eg: Xyz@gmail.com"
+                           Margin="0,0,0,-0"
+                                                     Keyboard="Email"
+                                                ReturnType="Next"
+                                                Text="{Binding Email, Mode=TwoWay}"
+                                                FontFamily="LocalFont"
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"/>
+                    <BoxView HeightRequest="0.5" VerticalOptions="End"
+                               BackgroundColor="{StaticResource OffBlack}"/>
+                </StackLayout>
+                  <Grid Grid.Row="2"
+                               
+                               Margin="0,15,0,0"
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Password" 
+                           FontFamily="LocalFont"
+                           VerticalOptions="Start"
+                           TextColor="{StaticResource OffBlack}"/>
+                           <BoxView HeightRequest="0.5" VerticalOptions="End"
+                               BackgroundColor="{StaticResource OffBlack}"/>
+                    <customcontrols:BorderLessEntry
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="End"
+                                            Placeholder="eg: 123456"
+                        ReturnCommand="{Binding LoginCommand}"
+                        ReturnType="Go"
+                        Margin="0,0,40,0"
+                                            TextColor="Black"
+                                               IsPassword="{Binding ShowPassword}"
+                                               Text="{Binding Password, Mode=TwoWay}"
+                                               FontFamily="LocalFont"
+                           PlaceholderColor="DarkGray"/>
+
+                          <ImageButton Source="blind"
+                                       VerticalOptions="End"
+                                       HorizontalOptions="End"
+                                       HeightRequest="25"
+                                       Margin="0,0,10,10"
+                                       BackgroundColor="Transparent"
+                                       Command="{Binding clickEye}">
+                              <ImageButton.Triggers>
+                                  <DataTrigger TargetType="ImageButton" Binding="{Binding ShowPassword}" Value="false">
+                                      <Setter Property="Source" Value="viewer"/>
+                                  </DataTrigger>
+                              </ImageButton.Triggers>
+                              </ImageButton>
+                         
+                      
+                </Grid>
+                <Label Text="Forget Password?"
+                        TextColor="Black"
+                       VerticalOptions="Center"
+                       Grid.Row="3"
+                       HorizontalOptions="End"
+                       FontFamily="LocalFont"/>
+            </Grid>
+            <Grid
+                VerticalOptions="FillAndExpand"
+                   Grid.RowSpan="2"
+                IsVisible="{Binding isLoading}"
+                >
+                <StackLayout
+                     BackgroundColor="Black" 
+                         Opacity="0.5"
+                    ></StackLayout>
+                <StackLayout
+              
+                VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True"
+                                       HeightRequest="50"
+                                       
+                                       Margin="0,20,0,-5"/>   
+                <Label Text="Please Wait..."
+                       FontFamily="LocalFont"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</services:BasePage>

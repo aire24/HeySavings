@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage
+ xmlns:pages="http://rotorgames.com"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Vm="clr-namespace:HeySavings.Popups"
+    x:Class="HeySavings.Popups.PopupOpenType"
+    CloseWhenBackgroundIsClicked="True">
+   <pages:PopupPage.BindingContext>
+       <Vm:PopupPageViewModel/>
+   </pages:PopupPage.BindingContext>
+    <pages:PopupPage.Animation>
+        <pages:ScaleAnimation 
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+           
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            />
+    </pages:PopupPage.Animation>
+    <Grid>
+
+  <Frame Padding="20" Margin="15,15,15,0"
+         CornerRadius="15"
+         VerticalOptions="End">
+      <StackLayout>
+          <Button Text="Open Savings"
+                  TextColor="black"
+                  CornerRadius="20"
+                  BackgroundColor="#f9f906"
+                  Command="{Binding OpenNextPage}"
+                  CommandParameter="Savings"
+                  />
+
+
+          <Button Text="Open Needs"
+                  TextColor="black"
+                  CornerRadius="20"
+                  BackgroundColor="#f9f906"
+                  Command="{Binding OpenNextPage}"
+                  CommandParameter="Needs"
+                  />
+
+
+          <Button Text="Open Wants"
+                  TextColor="Black"
+                  CornerRadius="20"
+                  BackgroundColor="#f9f906"
+                  CommandParameter="Wants"
+                  Command="{Binding OpenNextPage}"
+
+                  />
+
+      </StackLayout>
+
+  </Frame>
+        
+    </Grid>
+</pages:PopupPage>

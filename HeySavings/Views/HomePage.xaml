@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<services:BasePage  xmlns:services="clr-namespace:HeySavings.Services"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="HeySavings.Views.HomePage"
+    Title="hey Savings"
+    
+    xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:customcontrols="clr-namespace:HeySavings.CustomControls" xmlns:vm="clr-namespace:HeySavings.ViewModels">
+     
+    <ContentPage.Content>
+        <Grid 
+           >
+            <StackLayout
+                Margin="20"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+               
+                <Frame Padding="0,10"
+                       Margin="10,0"
+                       CornerRadius="20"
+           BorderColor="DarkGray"
+           HorizontalOptions="FillAndExpand">
+                    <StackLayout
+                        Spacing="0">
+    <customcontrols:BorderLessEntry
+        HorizontalTextAlignment="Center"
+        Margin="0,0"
+        FontFamily="LocalFont"
+        FontSize="Large"
+        IsReadOnly="True"
+        Text="{Binding Totalbudget}"
+            Keyboard="Numeric"
+            TextColor="Black"
+        FontAttributes="Bold">
+       
+    </customcontrols:BorderLessEntry>
+
+                 <Label Text="Total Budget"
+                       FontSize="30"
+                                                Margin="0,-10,0,0"
+
+                       FontFamily="LocalFont"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}"/>
+</StackLayout>
+        </Frame>
+
+
+
+
+                   <Frame Padding="0,10"
+                       Margin="10,40,10,0"
+           BorderColor="DarkGray"
+                          CornerRadius="20"
+           HorizontalOptions="FillAndExpand">
+                       <StackLayout Spacing="0">
+    <customcontrols:BorderLessEntry
+        HorizontalTextAlignment="Center"
+        Margin="0,0"
+        FontFamily="LocalFont"
+        FontSize="Large"
+        IsReadOnly="True"
+        Text="{Binding Remainingbudget}"
+            Keyboard="Numeric"
+            TextColor="Black"
+        FontAttributes="Bold">
+       
+    </customcontrols:BorderLessEntry>
+        
+
+                 <Label Text="Remaining Budget"
+                        Margin="0,-10,0,0"
+                        FontSize="30"
+                       FontFamily="LocalFont"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}"/>
+
+</StackLayout>
+</Frame>
+            </StackLayout>
+           
+              <ImageButton BackgroundColor="Transparent"
+                           Padding="0"
+                           Grid.Row="1"
+                           CornerRadius="150"
+                           Margin="20,50"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
+                           Source="pieimg" 
+                          Command="{Binding pieClicked}"
+                           Aspect="AspectFill"
+                          
+                                              />
+           
+          
+        </Grid>
+    </ContentPage.Content>
+</services:BasePage>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<services:BasePage  xmlns:services="clr-namespace:HeySavings.Services"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:vm="clr-namespace:HeySavings.ViewModels"
+    xmlns:customcontrols="clr-namespace:HeySavings.CustomControls"
+    x:Class="HeySavings.Views.ProfilePage"
+    Title="Profile">
+     <ContentPage.BindingContext>
+        <vm:ProfileViewModel />
+    </ContentPage.BindingContext>
+   <ContentPage.Content>
+          <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="0.8*" />
+               
+            </Grid.RowDefinitions>
+
+         
+            <pancake:PancakeView
+                Grid.Row="0"
+                Padding="0"
+                BackgroundColor="#f9f906"
+                CornerRadius="0,0,72,72"
+               VerticalOptions="FillAndExpand">
+                </pancake:PancakeView>
+
+               <ImageButton Source="user"
+                            BackgroundColor="Transparent"
+                            HeightRequest="100"
+                            CornerRadius="50"
+                            Padding="15"
+                            Margin="10"
+                            VerticalOptions="Start"
+                            BorderColor="Black"
+                            HorizontalOptions="Center"
+                            BorderWidth="3"/>
+
+
+
+            <Grid VerticalOptions="Start" 
+                  Margin="30,0,30,0"
+                      RowDefinitions="*,*,*,*">
+             
+
+                <StackLayout Grid.Row="1"
+                             Spacing="0"
+                             Margin="0,10"
+                             HorizontalOptions="FillAndExpand"
+                             >
+
+                    <Label Text="First Name"
+                           Margin="5,0"
+                           FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"/>
+
+                    <Frame Padding="5,-2"
+                           CornerRadius="10"
+           BorderColor="DarkGray"
+           HorizontalOptions="FillAndExpand">
+                        <customcontrols:EntryBlack 
+                        
+                        ReturnType="Next"
+                        Text="{Binding FirstName, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                           TextColor="Black"
+                           PlaceholderColor="DarkGray"/>
+                    </Frame>
+                </StackLayout>
+                  <StackLayout Grid.Row="2"
+                               Spacing="0"
+                             Margin="0,10"
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Last Name"
+                           Margin="5,0"
+                           FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"/>
+
+                       <Frame Padding="5,-2"
+                           CornerRadius="10"
+           BorderColor="DarkGray"
+           HorizontalOptions="FillAndExpand">
+                           <customcontrols:EntryBlack 
+                           
+                           TextColor="Black"
+                        ReturnType="Next"
+                            Text="{Binding LastName, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                           PlaceholderColor="DarkGray"/>
+                     </Frame>
+                </StackLayout>
+
+                 <StackLayout Grid.Row="3"
+                               Spacing="0"
+                               Margin="0,10"
+
+                             HorizontalOptions="FillAndExpand"
+                             >
+                    <Label Text="Budget"
+                           Margin="5,0"
+                           FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"/>
+                      <Frame Padding="5,-2"
+                           CornerRadius="10"
+           BorderColor="DarkGray"
+           HorizontalOptions="FillAndExpand">
+                    <customcontrols:EntryBlack
+                        TextColor="Black"
+                        Keyboard="Numeric"
+                        ReturnType="Next"
+                            Text="{Binding Budget, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                           PlaceholderColor="DarkGray"/>
+                      </Frame>
+                </StackLayout>
+
+                 
+
+            </Grid>
+
+            
+
+            
+            <Button Grid.Row="1"
+                    CornerRadius="20"
+                   Margin="50,0"
+                    VerticalOptions="Center"
+                    Command="{Binding UpdateProfile}"
+                    Text="Save"
+                    FontFamily="LocalFont"
+                    BackgroundColor="{StaticResource OffBlack}"
+                    HorizontalOptions="FillAndExpand"/>
+           
+          </Grid>
+
+    </ContentPage.Content>
+</services:BasePage>
