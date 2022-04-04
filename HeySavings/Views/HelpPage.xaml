@@ -29,20 +29,9 @@
                VerticalOptions="Center"
                  Grid.RowSpan="2">
 
-        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably.                               
-                NEEDS(50%)                                    
-               -housig and rent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                            -food/gorgeries
-               -transportation
-                            -bills or utilities                                                                                   
-                WANTS(30%)                                  
-               -dining out                      
-               -shopping                                -gadgets                 
-               -travel                                              
-               SAVINGS(20%)
-               -savings                         
-               -emergency fund          
-               -loan repayment"
+        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably.&#x0a;&#x0a;NEEDS(50%)&#x0a;•Housig and Rent&#x0a;•Food/Gorgeries&#x0a;•Transportation&#x0a;•bills or utilities                                                                                   
+                &#x0a;WANTS(30%)&#x0a;•Dining Out&#x0a;•Shopping&#x0a;•Gadgets&#x0a;•Travel&#x0a;&#x0a;SAVINGS(20%)&#x0a;•Savings                         
+               •Emergency Fund&#x0a;•Loan Repayment"
                Margin="20,30"
                TextColor="{StaticResource OffBlack}"
                FontFamily="LocalFont"

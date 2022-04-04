@@ -27,14 +27,12 @@
                 CornerRadius="0,0,72,72"
                VerticalOptions="FillAndExpand">
             </pancake:PancakeView>
-        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably. The basic rule pf thumb is to divide your monthly after - tax income into spending categories: 50% for needs, 30% for wants and 20% for savings for paying off debt."
-               Margin="20,0"
+        <Label Grid.Row="0" Text="Our 50/30/20 application divides your take-home income into suggested spending in three categories: 50% of net pay for needs, 30% for wants and 20% for savings and debt repayment."
+               Margin="20,40"
                TextColor="{StaticResource OffBlack}"
                FontFamily="LocalFont"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="End"
-               HorizontalOptions="Center"
-               VerticalOptions="End" FontSize="20"/>
+               FontSize="25"
+               />
 
         <Grid VerticalOptions="EndAndExpand"
               HorizontalOptions="FillAndExpand">

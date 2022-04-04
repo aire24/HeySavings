@@ -20,5 +20,7 @@ namespace HeySavings.Views
         {
             vm.LoadData();
         }
+
+       
     }
 }

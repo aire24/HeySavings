@@ -157,7 +157,30 @@
                     FontFamily="LocalFont"
                     BackgroundColor="{StaticResource OffBlack}"
                     HorizontalOptions="FillAndExpand"/>
-           
+
+               <Grid
+                VerticalOptions="FillAndExpand"
+                   Grid.RowSpan="2"
+                IsVisible="{Binding isLoading}"
+                >
+                <StackLayout
+                     BackgroundColor="Black" 
+                         Opacity="0.5"
+                    ></StackLayout>
+                <StackLayout
+              
+                VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True"
+                                       HeightRequest="50"
+                                       
+                                       Margin="0,20,0,-5"/>   
+                <Label Text="Please Wait..."
+                       FontFamily="LocalFont"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black"/>
+                </StackLayout>
+
+            </Grid>
           </Grid>
 
     </ContentPage.Content>

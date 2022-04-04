@@ -23,6 +23,19 @@ namespace HeySavings.ViewModels
 
         }
 
+        public void ShowSnackbar(string message, TimeSpan time)
+        {
+            Acr.UserDialogs.UserDialogs.Instance.Toast(message, time);
+
+        }
+
+
+        public void ShowSnackbar(string message)
+        {
+            Acr.UserDialogs.UserDialogs.Instance.Toast(message, TimeSpan.FromSeconds(1));
+
+        }
+
         bool isBusy = false;
         public bool IsBusy
         {

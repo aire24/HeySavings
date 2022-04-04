@@ -74,6 +74,7 @@ namespace HeySavings.ViewModels
 
           
             int result = 0;
+            var latestbudget = App.Database.getMonthlyBudget(App.login.id);
             if (isEdit == false)
             {
                 sp = new Spendings()
@@ -82,7 +83,10 @@ namespace HeySavings.ViewModels
                     id = App.login.id,
                     spendingDescription = Description,
                     spendingName = Name,
-                    type = this.type
+                    type = this.type,
+                    MonthlybudgetId = latestbudget.id
+                    
+
                 };
                 result = App.Database.AddSpendng(sp);
 

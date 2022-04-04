@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using HeySavings.SQL_Lite;
 using HeySavings.ViewModels;
 using HeySavings.Views;
 using Rg.Plugins.Popup.Services;
@@ -26,6 +27,11 @@ namespace HeySavings
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            MonthlyBudget mb = App.Database.getMonthlyBudget(App.login.id);
+            if (mb == null)
+            {
+                App.Database.createMonthlyBudget();
+            }
 
         }
         private async void OnMenuItemClicked(object sender, EventArgs e)

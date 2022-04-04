@@ -8,6 +8,47 @@
         <vm:SpendingsPageViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <StackLayout HorizontalOptions="FillAndExpand"
+                BackgroundColor="#f9f906"
+                Orientation="Horizontal"
+                         Padding="10,0">
+                <Label Text="Select Month: "
+                       FontSize="20"
+                       VerticalTextAlignment="Center" FontFamily="LocalFont"/>
+            <Picker HorizontalOptions="FillAndExpand"
+                    SelectedIndex="{Binding SelectedMonth}">
+                <Picker.Items>
+                    <x:String>Jan</x:String>
+                    <x:String>Feb</x:String>
+                    <x:String>Mar</x:String>
+                    <x:String>Apr</x:String>
+                    <x:String>May</x:String>
+                    <x:String>Jun</x:String>
+                    <x:String>Jul</x:String>
+                    <x:String>Aug</x:String>
+                    <x:String>Sep</x:String>
+                    <x:String>Oct</x:String>
+                    <x:String>Nov</x:String>
+                    <x:String>Dec</x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker ItemsSource="{Binding Years}"
+                    HorizontalOptions="FillAndExpand"
+                    SelectedItem="{Binding SelectedYear}">
+                
+                </Picker>
+        </StackLayout>
+            <Label FontFamily="LocalFont" BackgroundColor="#f9f906"
+                   TextColor="Black"
+                   HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Total Budget for this Month: "/>
+                        <Span Text="{Binding TotalBudget}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
           <Grid VerticalOptions="FillAndExpand" RowDefinitions="*,*,*">
            
          
@@ -298,6 +339,6 @@
              </StackLayout>
 
           </Grid>
-
+</StackLayout>
     </ContentPage.Content>
 </ContentPage>

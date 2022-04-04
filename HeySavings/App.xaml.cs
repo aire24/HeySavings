@@ -25,7 +25,7 @@ namespace HeySavings
             login = new LoginTable();
             
             DependencyService.Register<MockDataStore>();
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

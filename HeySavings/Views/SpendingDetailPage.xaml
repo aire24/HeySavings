@@ -34,8 +34,6 @@
                 <Label 
                        FontFamily="LocalFont"
                        
-                       
-                       
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource OffBlack}"
                        FontSize="Medium">

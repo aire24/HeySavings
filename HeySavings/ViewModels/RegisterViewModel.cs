@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+using HeySavings.Models;
 using HeySavings.SQL_Lite;
 using HeySavings.Views;
 using Xamarin.Forms;
@@ -51,7 +53,7 @@ namespace HeySavings.ViewModels
 
         public Command GoBack => new Command(() =>
         {
-            App.Current.MainPage = new LoginPage();
+            App.Current.MainPage.Navigation.PopAsync();
 
         });
 
@@ -65,7 +67,15 @@ namespace HeySavings.ViewModels
 
         });
 
-        public Command Register => new Command(() =>
+        bool _isloading;
+        public bool isLoading
+        {
+            get { return _isloading; }
+            set { SetProperty(ref _isloading, value);
+            }
+        }
+
+        public Command Register => new Command(async() =>
         {
 
 
@@ -108,25 +118,50 @@ namespace HeySavings.ViewModels
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Password must be atleast 4 characters!", new TimeSpan(2));
                 return;
             }
-            LoginTable register = new LoginTable()
-            {
-                email = Email,
-                password = Password,
-                firstname = FirstName,
-                lastname = LastName
-            };
+            isLoading = true;
+            await Task.Run(() =>
+            {  
+                try
+                {
+                    LoginTable register = new LoginTable()
+                    {
+                        email = Email,
+                        password = Password,
+                        firstname = FirstName,
+                        lastname = LastName
+                    };
 
-            int i = App.Database.SaveItem(register);
-            if (i > 0)
-            {
-                Acr.UserDialogs.UserDialogs.Instance.Toast("Register Successfully!", new TimeSpan(2));
-                App.login = register;
-                App.Current.MainPage = new LoginPage();
-            }
-            else
-            {
+                    int i = App.Database.SaveItem(register);
+                    
+                    if (i > 0)
+                    {
+                        string otp = SendEmail.SendMail(Email);
+                        if (string.IsNullOrEmpty(otp))
+                        {
+                            ShowSnackbar("Error Occured");
+                        }
+                        else
+                            Device.BeginInvokeOnMainThread(() =>
+                            {
+                                ShowSnackbar($"Otp Sent to {Email}");
+                                App.Current.MainPage.Navigation.PushAsync(new OtpPage(otp, Email));
+                            });
+                    
+                    }
+                    else
+                    {
 
-            }
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                }
+                finally
+                {
+                    isLoading = false;
+                }
+            });
         });
         
     }

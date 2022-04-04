@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using HeySavings.Models;
 using HeySavings.SQL_Lite;
 using HeySavings.Views;
 using System;
@@ -59,7 +60,7 @@ namespace HeySavings.ViewModels
 
         public Command clickEye => new Command(() =>
          {
-             //string image = (ShowPassword) ? "blind.png" : "viewer.png";
+             //string imagevvvvvvvvvvvvvvvvvvvvvvvvvvv = (ShowPassword) ? "blind.png" : "viewer.png";
              //eyeIcon = new BitmapImage(new Uri(image, UriKind.Relative));
              
              ShowPassword = !ShowPassword;
@@ -144,7 +145,7 @@ namespace HeySavings.ViewModels
 
         public Command RegisterCommand => new Command(() =>
         {
-            App.Current.MainPage = new RegisterPage();
+            App.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         });
     }
 }

@@ -65,23 +65,28 @@ namespace HeySavings.ViewModels
         {
             var data = App.Database.getAllSpendings(App.login.id);
             List<Spendings> temp = App.Database.getAllSpendings(App.login.id).Where(x=> x.type == typeSpending).ToList();
+            MonthlyBudget bdgt = App.Database.getMonthlyBudget(App.login.id);
+
             b = App.Database.getBudget(App.login.id);
+            double totalbudget = Convert.ToDouble(bdgt.monthlybudget);
+            
+
             if (temp != null)
             {
                 LstSpendings = new ObservableCollection<Spendings>(temp);
                 if (typeSpending == SpendingType.Needs)
                 {
                     Heading = "Needs Budget";
-                    TotalBudget = (Convert.ToDouble(b.budget) / 100) * 50;
+                    TotalBudget = (totalbudget / 100) * 50;
                 }
                 else if (typeSpending == SpendingType.Wants)
                 {
                     Heading = "Wants Budget";
-                    TotalBudget = (Convert.ToDouble(b.budget) / 100) * 30;
+                    TotalBudget = (totalbudget / 100) * 30;
                 }
                 else {
                     Heading = "Savings Budget";
-                    TotalBudget = (Convert.ToDouble(b.budget) / 100) * 20;
+                    TotalBudget = (totalbudget / 100) * 20;
                 }
 
                 double totalSpent = LstSpendings.Sum(x => Convert.ToDouble(x.amount));
