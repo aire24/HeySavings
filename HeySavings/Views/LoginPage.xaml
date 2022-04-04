@@ -35,7 +35,7 @@
                          Margin="0,0,0,-25"
                          VerticalOptions="End">
             <Button CornerRadius="20"
-                    Text="SIGNUP"
+                    Text="SIGN UP"
                     Command="{Binding RegisterCommand}"
                     Padding="40,0"
                     FontFamily="LocalFont"
@@ -109,7 +109,7 @@
                        
                         </Label>
                     
-                    <customcontrols:BorderLessEntry  Placeholder="eg: Xyz@gmail.com"
+                    <customcontrols:BorderLessEntry 
                            Margin="0,0,0,-0"
                                                      Keyboard="Email"
                                                 ReturnType="Next"
@@ -134,7 +134,7 @@
                     <customcontrols:BorderLessEntry
                                             BackgroundColor="Transparent"
                                             VerticalOptions="End"
-                                            Placeholder="eg: 123456"
+                                           
                         ReturnCommand="{Binding LoginCommand}"
                         ReturnType="Go"
                         Margin="0,0,40,0"

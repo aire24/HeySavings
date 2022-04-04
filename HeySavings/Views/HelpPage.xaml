@@ -29,25 +29,21 @@
                VerticalOptions="Center"
                  Grid.RowSpan="2">
 
-        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably. 
-               NEEDS(50%)
-               -housig
-               -rent
-               -food
-               -gorgeries
+        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably.                               
+                NEEDS(50%)                                    
+               -housig and rent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                            -food/gorgeries
                -transportation
-               -bills
-               -utilities
-               WANTS(30%)
-               -dining out
-               -shopping
-               -travel
-               -gadgets
+                            -bills or utilities                                                                                   
+                WANTS(30%)                                  
+               -dining out                      
+               -shopping                                -gadgets                 
+               -travel                                              
                SAVINGS(20%)
-               -savings
-               -emergency fund
+               -savings                         
+               -emergency fund          
                -loan repayment"
-               Margin="20,0"
+               Margin="20,30"
                TextColor="{StaticResource OffBlack}"
                FontFamily="LocalFont"
                HorizontalTextAlignment="Center"
