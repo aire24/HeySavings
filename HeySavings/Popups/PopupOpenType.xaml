@@ -14,8 +14,8 @@
             PositionIn="Bottom"
             PositionOut="Bottom"
            
-            DurationIn="400"
-            DurationOut="300"
+            DurationIn="40"
+            DurationOut="30"
             EasingIn="SinOut"
             EasingOut="SinIn"
             />

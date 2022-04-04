@@ -65,8 +65,8 @@ namespace HeySavings.ViewModels
                 return;
             }
 
-            string currency = (Index == 0) ? "RANO" : "EURO";
-            string symbol = (Index == 0) ? "LIE" : "€";
+            string currency = (Index == 0) ? "RON" : "EURO";
+            string symbol = (Index == 0) ? "LEI" : "€";
             Budget budget = new Budget()
             {
                 id = App.login.id,

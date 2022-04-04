@@ -37,8 +37,6 @@ namespace HeySavings.SQL_Lite
     {
         [PrimaryKey, AutoIncrement]
         public int spendingId { get; set; }
-
-
         public int id { get; set; }
         public string spendingName { get; set; }
         public string spendingDescription { get; set; }

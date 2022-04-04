@@ -64,7 +64,7 @@
             TextColor="Black"
         FontAttributes="Bold">
         <Picker.Items>
-            <x:String>LIE (RANO)</x:String>
+            <x:String>LEI (RON)</x:String>
             <x:String>€ (EURO)</x:String>
 
         </Picker.Items>
