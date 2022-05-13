@@ -117,7 +117,7 @@ namespace HeySavings.ViewModels
             {
                 bdgt.budget = newBudget.ToString("0.00");
                 App.Database.UpdateBudget(bdgt);
-                Acr.UserDialogs.UserDialogs.Instance.Toast("Budget was Updated Successfully!", new TimeSpan(2));
+                Acr.UserDialogs.UserDialogs.Instance.Toast("Budget Updated Successfully!", new TimeSpan(2));
                 LoadData();
             }
             catch (Exception ex)
