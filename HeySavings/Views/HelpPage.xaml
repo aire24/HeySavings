@@ -7,29 +7,25 @@
     Title="Help">
     <ContentPage.Content>
          <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.9*" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.5*" />
-
-        </Grid.RowDefinitions>
-
-        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.9*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
             <pancake:PancakeView
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Padding="0"
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
-               VerticalOptions="FillAndExpand">
+                VerticalOptions="FillAndExpand">
             </pancake:PancakeView>
-             <StackLayout
+            <StackLayout
                  HorizontalOptions="Center"
-               VerticalOptions="Center"
+                 VerticalOptions="Center"
                  Grid.RowSpan="2">
-
-        <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably.&#x0a;&#x0a;NEEDS(50%)&#x0a;•Housig and Rent&#x0a;•Food/Gorgeries&#x0a;•Transportation&#x0a;•bills or utilities                                                                                   
+                <Label Grid.Row="0" Text="The 50/30/20 rule is an easy budgeting method that can help you to manage your money effectively, simply and sustainably.&#x0a;&#x0a;NEEDS(50%)&#x0a;•Housig and Rent&#x0a;•Food/Gorgeries&#x0a;•Transportation&#x0a;•bills or utilities                                                                                   
                 &#x0a;WANTS(30%)&#x0a;•Dining Out&#x0a;•Shopping&#x0a;•Gadgets&#x0a;•Travel&#x0a;&#x0a;SAVINGS(20%)&#x0a;•Savings                         
                •Emergency Fund&#x0a;•Loan Repayment"
                Margin="20,30"
@@ -37,9 +33,8 @@
                FontFamily="LocalFont"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="End"
-                FontSize="22"/>
-                 </StackLayout>
-        
-            </Grid>
+               FontSize="22"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </services:BasePage>

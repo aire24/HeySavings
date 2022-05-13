@@ -33,10 +33,9 @@
                     <x:String>Dec</x:String>
                 </Picker.Items>
             </Picker>
-            <Picker ItemsSource="{Binding Years}"
+                <Picker ItemsSource="{Binding Years}"
                     HorizontalOptions="FillAndExpand"
                     SelectedItem="{Binding SelectedYear}">
-                
                 </Picker>
         </StackLayout>
             <Label FontFamily="LocalFont" BackgroundColor="#f9f906"
@@ -46,298 +45,225 @@
                     <FormattedString>
                         <Span Text="Total Budget for this Month: "/>
                         <Span Text="{Binding TotalBudget}"/>
-                     
                     </FormattedString>
                 </Label.FormattedText>
-                
             </Label>
-          <Grid VerticalOptions="FillAndExpand" RowDefinitions="*,*,*">
-           
-         
-            <pancake:PancakeView
+            <Grid VerticalOptions="FillAndExpand" RowDefinitions="*,*,*">
+                <pancake:PancakeView
                 Grid.RowSpan="2"
                 Padding="0"
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
-               VerticalOptions="FillAndExpand">
+                VerticalOptions="FillAndExpand">
                 </pancake:PancakeView>
-
-             <StackLayout Margin="10,5" >
-                 <Label Text="Savings"
+                <StackLayout Margin="10,5" >
+                    <Label Text="Savings"
                         FontSize="18"
                         Margin="0,0,0,-10"
                         FontFamily="LocalFont"
                         HorizontalTextAlignment="Center"
-                           TextColor="{StaticResource OffBlack}"
+                        TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-                  <Grid ColumnDefinitions="1*,1.1*,0.7*"
+                    <Grid ColumnDefinitions="1*,1.1*,0.7*"
                       RowDefinitions="25,*"
-              
                       VerticalOptions="Start"
                       >
-                    <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                              BackgroundColor="Black"/>
-                     <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                               Grid.Row="1"
                              BackgroundColor="Black"
                               />
-                
-                    <Label Text="Name" 
-                            FontFamily="LocalFont"
-                           
-                           TextColor="{StaticResource OffBlack}"
-                       FontAttributes="Bold"/>
-                    <Label Text="Description" Grid.Column="1" 
-                            FontFamily="LocalFont"
-                           TextColor="{StaticResource OffBlack}"
-                       FontAttributes="Bold"/>
-
-                    <Label Text="Amount" Grid.Column="2" 
-                            FontFamily="LocalFont"
-
-                           TextColor="{StaticResource OffBlack}"
-                       FontAttributes="Bold"/>
-
-                   
-
-
-                <CollectionView Grid.Row="1"
+                        <Label Text="Name" 
+                               FontFamily="LocalFont"
+                               TextColor="{StaticResource OffBlack}"
+                               FontAttributes="Bold"/>
+                        <Label Text="Description" Grid.Column="1" 
+                               FontFamily="LocalFont"
+                               TextColor="{StaticResource OffBlack}"
+                               FontAttributes="Bold"/>
+                        <Label Text="Amount" Grid.Column="2" 
+                               FontFamily="LocalFont"
+                               TextColor="{StaticResource OffBlack}"
+                               FontAttributes="Bold"/>
+                        <CollectionView Grid.Row="1"
                                 Margin="0,5,0,0"
                                 ItemsSource="{Binding LstSavings}"
                                 VerticalOptions="FillAndExpand"
                                 Grid.ColumnSpan="3"
                                 x:Name="cv"
                     >
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout 
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout 
                                          HeightRequest="35">
-                            <Grid ColumnDefinitions="1*,1.1*,0.7*"
-
+                                        <Grid ColumnDefinitions="1*,1.1*,0.7*"
                                   VerticalOptions="Start">
-
-                                <Label Text="{Binding spendingName}"
+                                            <Label Text="{Binding spendingName}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        />
-
-
-                                <Label Text="{Binding spendingDescription}"
+                                            <Label Text="{Binding spendingDescription}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        Grid.Column="1"/>
-
-
-                                <Label Text="{Binding amount}"
+                                            <Label Text="{Binding amount}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
-
                                        HorizontalTextAlignment="Center"
                                        Grid.Column="2"/>
-
-
-                            </Grid>
-                                  <BoxView HeightRequest="0.4"
+                                        </Grid>
+                                        <BoxView HeightRequest="0.4"
                          BackgroundColor="Gray"/>
-                                </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    
-                </CollectionView>
-                                    </Grid >
-              
-
-             </StackLayout>
- 
-
-
-               <StackLayout Margin="10,5" Grid.Row="1">
-                 <Label Text="Needs"
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid >
+                </StackLayout>
+                <StackLayout Margin="10,5" Grid.Row="1">
+                    <Label Text="Needs"
                         FontSize="18"
                         Margin="0,0,0,-10"
                         FontFamily="LocalFont"
                         HorizontalTextAlignment="Center"
-                           TextColor="{StaticResource OffBlack}"
+                        TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-                  <Grid ColumnDefinitions="1*,1.1*,0.7*"
+                    <Grid ColumnDefinitions="1*,1.1*,0.7*"
                       RowDefinitions="25,*"
-              
                       VerticalOptions="Start"
                       >
-                    <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                              BackgroundColor="Black"/>
-                     <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                               Grid.Row="1"
                              BackgroundColor="Black"
                               />
-                
-                    <Label Text="Name" 
-                            FontFamily="LocalFont"
-                           
-                           TextColor="{StaticResource OffBlack}"
-                       FontAttributes="Bold"/>
-                    <Label Text="Description" Grid.Column="1" 
+                        <Label Text="Name" 
                             FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-
-                    <Label Text="Amount" Grid.Column="2" 
+                        <Label Text="Description" Grid.Column="1" 
                             FontFamily="LocalFont"
-
                            TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-
-                   
-
-
-                <CollectionView Grid.Row="1"
+                        <Label Text="Amount" Grid.Column="2" 
+                            FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+                       FontAttributes="Bold"/>
+                        <CollectionView Grid.Row="1"
                                 Margin="0,5,0,0"
                                 ItemsSource="{Binding LstNeeds}"
                                 VerticalOptions="FillAndExpand"
                                 Grid.ColumnSpan="3"
                                 x:Name="cv1"
                     >
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout 
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout 
                                          HeightRequest="35">
-                            <Grid ColumnDefinitions="1*,1.1*,0.7*"
-
+                                        <Grid ColumnDefinitions="1*,1.1*,0.7*"
                                   VerticalOptions="Start">
-
-                                <Label Text="{Binding spendingName}"
+                                            <Label Text="{Binding spendingName}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        />
-
-
-                                <Label Text="{Binding spendingDescription}"
+                                            <Label Text="{Binding spendingDescription}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        Grid.Column="1"/>
-
-
                                             <Label Text="{Binding amount}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
-
                                        HorizontalTextAlignment="Center"
                                        Grid.Column="2"/>
                                         </Grid>
-                                  <BoxView HeightRequest="0.4"
+                                        <BoxView HeightRequest="0.4"
                          BackgroundColor="Gray"/>
-                                </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    
-                </CollectionView>
-                                    </Grid >
-              
-
-             </StackLayout>
-
-
-               <StackLayout Margin="10,5" Grid.Row="2">
-                 <Label Text="Wants"
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid >
+                </StackLayout>
+                <StackLayout Margin="10,5" Grid.Row="2">
+                    <Label Text="Wants"
                         FontSize="18"
                         Margin="0,0,0,-10"
                         FontFamily="LocalFont"
                         HorizontalTextAlignment="Center"
                            TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-                  <Grid ColumnDefinitions="1*,1.1*,0.7*"
+                    <Grid ColumnDefinitions="1*,1.1*,0.7*"
                       RowDefinitions="25,*"
-              
                       VerticalOptions="Start"
                       >
-                    <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                              BackgroundColor="Black"/>
-                     <BoxView HeightRequest="1"
+                        <BoxView HeightRequest="1"
                              VerticalOptions="Start"
                              Grid.ColumnSpan="3"
                               Grid.Row="1"
                              BackgroundColor="Black"
                               />
-                
-                    <Label Text="Name" 
-                            FontFamily="LocalFont"
-                           
-                           TextColor="{StaticResource OffBlack}"
-                       FontAttributes="Bold"/>
-                    <Label Text="Description" Grid.Column="1" 
+                        <Label Text="Name" 
                             FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-
-                    <Label Text="Amount" Grid.Column="2" 
+                        <Label Text="Description" Grid.Column="1" 
                             FontFamily="LocalFont"
-
                            TextColor="{StaticResource OffBlack}"
                        FontAttributes="Bold"/>
-
-                   
-
-
-                <CollectionView Grid.Row="1"
+                        <Label Text="Amount" Grid.Column="2" 
+                            FontFamily="LocalFont"
+                           TextColor="{StaticResource OffBlack}"
+                       FontAttributes="Bold"/>
+                        <CollectionView Grid.Row="1"
                                 Margin="0,5,0,0"
                                 ItemsSource="{Binding LstWants}"
                                 VerticalOptions="FillAndExpand"
                                 Grid.ColumnSpan="3"
                                 x:Name="cv2"
                     >
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout 
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout 
                                          HeightRequest="35">
-                            <Grid ColumnDefinitions="1*,1.1*,0.7*"
-
+                                        <Grid ColumnDefinitions="1*,1.1*,0.7*"
                                   VerticalOptions="Start">
-
-                                <Label Text="{Binding spendingName}"
+                                            <Label Text="{Binding spendingName}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        />
-
-
-                                <Label Text="{Binding spendingDescription}"
+                                            <Label Text="{Binding spendingDescription}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
                                        Grid.Column="1"/>
-
-
-                                <Label Text="{Binding amount}"
+                                            <Label Text="{Binding amount}"
                                         FontFamily="LocalFont"
                            TextColor="{StaticResource OffBlack}"
-
                                        HorizontalTextAlignment="Center"
                                        Grid.Column="2"/>
-
-                               
-
-                            </Grid>
-                                  <BoxView HeightRequest="0.4"
+                                        </Grid>
+                                        <BoxView HeightRequest="0.4"
                          BackgroundColor="Gray"/>
-                                </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                    
-                </CollectionView>
-                                    </Grid >
-              
-
-             </StackLayout>
-
-          </Grid>
-</StackLayout>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid >
+                </StackLayout>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

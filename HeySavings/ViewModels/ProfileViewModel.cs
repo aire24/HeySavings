@@ -12,15 +12,12 @@ namespace HeySavings.ViewModels
             get { return _budget; }
             set { SetProperty(ref _budget, value); }
         }
-
-
         string firstname;
         public string FirstName
         {
             get { return firstname; }
             set { SetProperty(ref firstname, value); }
         }
-
         string lastname;
         public string LastName
         {
@@ -28,12 +25,10 @@ namespace HeySavings.ViewModels
             set { SetProperty(ref lastname, value); }
         }
         Budget b;
-
         public ProfileViewModel()
         {
             Load();
         }
-
         public void Load()
         {
             b = App.Database.getBudget(App.login.id);
@@ -47,23 +42,16 @@ namespace HeySavings.ViewModels
             {
                 b.budget = this.Budget;
                 App.Database.UpdateBudget(b);
-
                 LoginTable userdetail = App.login;
                 userdetail.firstname = FirstName;
                 userdetail.lastname = LastName;
-
                 App.Database.SaveItem(userdetail);
-
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Profile Saved Successfully!", new TimeSpan(2));
-
             }
             catch (Exception ex)
             {
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Error While Saving!", new TimeSpan(2));
-
             }
-
-
         });
     }
 }

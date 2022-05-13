@@ -12,46 +12,37 @@ namespace HeySavings.ViewModels
     public class AboutViewModel : BaseViewModel
     {
         public int id { get; set; }
-
         string _budget;
         public string budget
         {
             get { return _budget; }
             set { SetProperty(ref _budget, value); }
         }
-
-
         int _index;
         public int Index
         {
             get { return _index; }
             set { SetProperty(ref _index, value); }
         }
-
         bool _isLoading;
         public bool isLoading
         {
             get { return _isLoading; }
             set { SetProperty(ref _isLoading, value); }
         }
-
         public AboutViewModel()
         {
             Index = -1;
             isLoading = false;
-
         }
-
         public ICommand FirstPageCommand => new Command(() =>
         {
             App.Current.MainPage = new AboutPage1(); 
         });
-
         public ICommand SecondPageCommand => new Command(() =>
         {
             App.Current.MainPage = new AboutPage2();
         });
-
         public ICommand ThriPageCommand => new Command(async() =>
         {
             if (Index < 0)
@@ -64,7 +55,6 @@ namespace HeySavings.ViewModels
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Enter Budget!", new TimeSpan(2));
                 return;
             }
-
             string currency = (Index == 0) ? "RON" : "EURO";
             string symbol = (Index == 0) ? "LEI" : "€";
             Budget budget = new Budget()

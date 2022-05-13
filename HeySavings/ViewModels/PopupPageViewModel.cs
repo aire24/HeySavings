@@ -12,19 +12,12 @@ namespace HeySavings.Popups
         public PopupPageViewModel()
         {
         }
-
-
         public Command<string> OpenNextPage => new Command<string>((args) =>
          {
-
-             PopupNavigation.Instance.PopAllAsync();
-            
+             PopupNavigation.Instance.PopAllAsync();  
              if (args == "Savings")     Navigation.PushAsync(new SpendingDetailPage(SpendingType.Savings));
              else if (args == "Needs")  Navigation.PushAsync(new SpendingDetailPage(SpendingType.Needs));
              else   Navigation.PushAsync(new SpendingDetailPage(SpendingType.Wants));
-
          });
-
-       
     }
 }

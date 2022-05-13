@@ -16,37 +16,30 @@ namespace HeySavings.ViewModels
             get { return name; }
             set { SetProperty(ref name, value); }
         }
-
         string description;
         public string Description
         {
             get { return description; }
             set { SetProperty(ref description, value); }
         }
-
-
         bool isEdit;
         public bool IsEdit
         {
             get { return isEdit; }
             set { SetProperty(ref isEdit, value); }
         }
-
         string amount;
         public string Amount
         {
             get { return amount; }
             set { SetProperty(ref amount, value); }
         }
-
-
         public AddEditPageViewModel(SpendingType sptype, double remainingbudget)
         {
             IsEdit = false;
             type = sptype;
             Remainingbudget = remainingbudget;
         }
-
         public AddEditPageViewModel(Spendings spending, double remainingbudget)
         {
             IsEdit = true;
@@ -56,7 +49,6 @@ namespace HeySavings.ViewModels
             Description = sp.spendingDescription;
             Remainingbudget = remainingbudget;
         }
-
         public Command SaveUpdate => new Command(() =>
         {
             double amount = Convert.ToDouble(Amount);
@@ -65,14 +57,11 @@ namespace HeySavings.ViewModels
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Invalid amount!", new TimeSpan(1));
                 return;
             }
-
             if (amount > Remainingbudget)
             {
                 Acr.UserDialogs.UserDialogs.Instance.Toast("Your budget is too low to spend!", new TimeSpan(1));
                 return;
             }
-
-          
             int result = 0;
             var latestbudget = App.Database.getMonthlyBudget(App.login.id);
             if (isEdit == false)
@@ -85,14 +74,9 @@ namespace HeySavings.ViewModels
                     spendingName = Name,
                     type = this.type,
                     MonthlybudgetId = latestbudget.id
-                    
-
                 };
                 result = App.Database.AddSpendng(sp);
-
                  Acr.UserDialogs.UserDialogs.Instance.Toast((result > 0)?"Added Successfully!" : "Error While Saving!", new TimeSpan(1));
-                
-
             }
             else
             {
@@ -101,13 +85,8 @@ namespace HeySavings.ViewModels
                 sp.spendingName = Name;
                 result = App.Database.UpdateSpending(sp);
                 Acr.UserDialogs.UserDialogs.Instance.Toast((result > 0) ? "Updated Successfully!" : "Error While Updating!", new TimeSpan(1));
-
             }
-
             if (result != 0) Navigation.PopAsync();
-
         });
-
-
     }
 }

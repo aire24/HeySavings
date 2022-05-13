@@ -15,10 +15,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="1.5*" />
                 <RowDefinition Height="0.8*" />
-               
             </Grid.RowDefinitions>
-
-         
             <pancake:PancakeView
                 InputTransparent="True"
                 Grid.Row="0"
@@ -26,15 +23,13 @@
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
                VerticalOptions="FillAndExpand">
-                </pancake:PancakeView>
-            
-            
+            </pancake:PancakeView>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center"
                          Spacing="20"
                          Margin="0,0,0,-25"
                          VerticalOptions="End">
-            <Button CornerRadius="20"
+                <Button CornerRadius="20"
                     Text="SIGN UP"
                     Command="{Binding RegisterCommand}"
                     Padding="40,0"
@@ -42,92 +37,74 @@
                     BackgroundColor="{StaticResource OffBlack}"
                     VerticalOptions="End"
                     HorizontalOptions="Center"/>
-
-              
-             <Button CornerRadius="20"
+                <Button CornerRadius="20"
                     Text="Login "
                     Command="{Binding LoginCommand}"
-
                      FontFamily="LocalFont"
                      Padding="45,0"
                     BackgroundColor="{StaticResource OffBlack}"
                     VerticalOptions="End"
                     HorizontalOptions="Center"/>
-                </StackLayout>
-
-            
+            </StackLayout>
             <Grid VerticalOptions="End" 
                   Margin="30,30,30,10"
                       RowDefinitions="*,*,*,*">
-
                 <Label Text="Login"
                        FontFamily="LocalFont"
-
                        TextColor="{StaticResource OffBlack}"
                        FontSize="Large"/>
-
-
                 <StackLayout Grid.Row="1"
                              Spacing="0"
                              HorizontalOptions="FillAndExpand">
-
                     <Label Text="Email"
                            FontFamily="LocalFont"
-
                            TextColor="{StaticResource OffBlack}">
-                       
-                        </Label>
-                    
+                    </Label>
                     <customcontrols:BorderLessEntry 
                            Margin="0,0,0,-0"
-                                                     Keyboard="Email"
-                                                ReturnType="Next"
-                                                Text="{Binding Email, Mode=TwoWay}"
-                                                FontFamily="LocalFont"
+                           Keyboard="Email"
+                           ReturnType="Next"
+                           Text="{Binding Email, Mode=TwoWay}"
+                           FontFamily="LocalFont"
                            TextColor="Black"
                            PlaceholderColor="DarkGray"/>
                     <BoxView HeightRequest="0.5" VerticalOptions="End"
                                BackgroundColor="{StaticResource OffBlack}"/>
                 </StackLayout>
-                  <Grid Grid.Row="2"
-                               
-                               Margin="0,15,0,0"
+                <Grid Grid.Row="2"
+                             Margin="0,15,0,0"
                              HorizontalOptions="FillAndExpand"
                              >
                     <Label Text="Password" 
                            FontFamily="LocalFont"
                            VerticalOptions="Start"
                            TextColor="{StaticResource OffBlack}"/>
-                           <BoxView HeightRequest="0.5" VerticalOptions="End"
+                    <BoxView HeightRequest="0.5" VerticalOptions="End"
                                BackgroundColor="{StaticResource OffBlack}"/>
                     <customcontrols:BorderLessEntry
                                             BackgroundColor="Transparent"
-                                            VerticalOptions="End"
-                                           
+                                            VerticalOptions="End"              
                         ReturnCommand="{Binding LoginCommand}"
                         ReturnType="Go"
                         Margin="0,0,40,0"
-                                            TextColor="Black"
-                                               IsPassword="{Binding ShowPassword}"
-                                               Text="{Binding Password, Mode=TwoWay}"
-                                               FontFamily="LocalFont"
-                           PlaceholderColor="DarkGray"/>
-
-                          <ImageButton Source="blind"
+                        TextColor="Black"
+                        IsPassword="{Binding ShowPassword}"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        FontFamily="LocalFont"
+                        PlaceholderColor="DarkGray"/>
+                    <ImageButton Source="blind"
                                        VerticalOptions="End"
                                        HorizontalOptions="End"
                                        HeightRequest="25"
                                        Margin="0,0,10,10"
                                        BackgroundColor="Transparent"
                                        Command="{Binding clickEye}">
-                              <ImageButton.Triggers>
-                                  <DataTrigger TargetType="ImageButton" Binding="{Binding ShowPassword}" Value="false">
-                                      <Setter Property="Source" Value="viewer"/>
-                                  </DataTrigger>
-                              </ImageButton.Triggers>
-                              </ImageButton>
-                         
-                      
+                        <ImageButton.Triggers>
+                            <DataTrigger TargetType="ImageButton" Binding="{Binding ShowPassword}" Value="false">
+                                <Setter Property="Source" Value="viewer"/>
+                            </DataTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
                 </Grid>
                 <Label Text="Forget Password?"
                         TextColor="Black"
@@ -146,20 +123,16 @@
                          Opacity="0.5"
                     ></StackLayout>
                 <StackLayout
-              
                 VerticalOptions="Center">
                     <ActivityIndicator IsRunning="True"
-                                       HeightRequest="50"
-                                       
-                                       Margin="0,20,0,-5"/>   
-                <Label Text="Please Wait..."
+                                       HeightRequest="50"                 
+                                       Margin="0,20,0,-5"/>
+                    <Label Text="Please Wait..."
                        FontFamily="LocalFont"
                        HorizontalTextAlignment="Center"
                        TextColor="Black"/>
                 </StackLayout>
-
             </Grid>
         </Grid>
-
     </ContentPage.Content>
 </services:BasePage>

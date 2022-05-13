@@ -14,72 +14,62 @@
                 Margin="20"
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand">
-               
+
                 <Frame Padding="0,10"
                        Margin="10,0"
                        CornerRadius="20"
            BorderColor="DarkGray"
            HorizontalOptions="FillAndExpand">
-            <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding editBudget}"/>
-            </Frame.GestureRecognizers>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding editBudget}"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout
                         Spacing="0">
-    <customcontrols:BorderLessEntry
+                        <customcontrols:BorderLessEntry
         HorizontalTextAlignment="Center"
         Margin="0,0"
         FontFamily="LocalFont"
         FontSize="Large"
         IsReadOnly="True"
         Text="{Binding Totalbudget}"
-            Keyboard="Numeric"
-            TextColor="Black"
+        Keyboard="Numeric"
+        TextColor="Black"
         FontAttributes="Bold">
-        <customcontrols:BorderLessEntry.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding editBudget}"/>
-            </customcontrols:BorderLessEntry.GestureRecognizers>
-    </customcontrols:BorderLessEntry>
-
-                 <Label Text="Total Budget"
+                            <customcontrols:BorderLessEntry.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding editBudget}"/>
+                            </customcontrols:BorderLessEntry.GestureRecognizers>
+                        </customcontrols:BorderLessEntry>
+                        <Label Text="Total Budget"
                        FontSize="30"
                        Margin="0,-10,0,0"
-
                        FontFamily="LocalFont"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource OffBlack}">
-                      <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding editBudget}"/>
-            </Label.GestureRecognizers>
-                 </Label>
-
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding editBudget}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
                         <Label Text="{Binding BudgetExplain}"
                        FontSize="16"
                        Margin="0,-10,0,0"
-
                        FontFamily="LocalFont"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource OffBlack}">
-                                 <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding editBudget}"/>
-            </Label.GestureRecognizers>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding editBudget}"/>
+                            </Label.GestureRecognizers>
                         </Label>
-
-
-</StackLayout>
-        </Frame>
-
-
-
-
-                   <Frame Padding="0,10"
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0,10"
                        Margin="10,40,10,0"
            BorderColor="DarkGray"
                           CornerRadius="20"
            HorizontalOptions="FillAndExpand">
-                       <StackLayout Spacing="0">
-    <customcontrols:BorderLessEntry
+                    <StackLayout Spacing="0">
+                        <customcontrols:BorderLessEntry
         HorizontalTextAlignment="Center"
         Margin="0,0"
         FontFamily="LocalFont"
@@ -89,23 +79,18 @@
             Keyboard="Numeric"
             TextColor="Black"
         FontAttributes="Bold">
-       
-    </customcontrols:BorderLessEntry>
-        
-
-                 <Label Text="Remaining Budget"
+                        </customcontrols:BorderLessEntry>
+                        <Label Text="Remaining Budget"
                         Margin="0,-10,0,0"
                         FontSize="30"
                        FontFamily="LocalFont"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource OffBlack}"/>
-
-</StackLayout>
-</Frame>
+                    </StackLayout>
+                </Frame>
             </StackLayout>
-           
-              <ImageButton BackgroundColor="Transparent"
+            <ImageButton BackgroundColor="Transparent"
                            Padding="0"
                            Grid.Row="1"
                            CornerRadius="150"
@@ -114,11 +99,8 @@
                            HorizontalOptions="Center"
                            Source="pieimg" 
                           Command="{Binding pieClicked}"
-                           Aspect="AspectFill"
-                          
-                                              />
-           
-          <Grid BackgroundColor="Black" Opacity=".3" Grid.RowSpan="2" IsVisible="{Binding showEditBudget}">
+                           Aspect="AspectFill"/>
+            <Grid BackgroundColor="Black" Opacity=".3" Grid.RowSpan="2" IsVisible="{Binding showEditBudget}">
               <Grid.GestureRecognizers>
                   <TapGestureRecognizer Command="{Binding hideEdit}"/>
               </Grid.GestureRecognizers>
@@ -134,28 +116,27 @@
                     <Label Text="Enter New Budget"
                            FontFamily="LocalFont"
                            FontSize="Large"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource OffBlack}"/>
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           TextColor="{StaticResource OffBlack}"/>
                     <Frame BorderColor="Black" Padding="5,0"
                            CornerRadius="10">
-                    <customcontrols:BorderLessEntry Keyboard="Numeric"
+                        <customcontrols:BorderLessEntry Keyboard="Numeric"
                                                     Text="{Binding newBudget}"
                                                     TextColor="Black"
                                                     HorizontalTextAlignment="Center"/>
                     </Frame>
-                <Button CornerRadius="10"
+                    <Button CornerRadius="10"
                         Margin="0,20"
-                    Text="update"
-                    Command="{Binding ResetBudget}"
-                    Padding="40,0"
-                    FontFamily="LocalFont"
-                    BackgroundColor="{StaticResource OffBlack}"
-                    VerticalOptions="End"
+                        Text="update"
+                        Command="{Binding ResetBudget}"
+                        Padding="40,0"
+                        FontFamily="LocalFont"
+                        BackgroundColor="{StaticResource OffBlack}"
+                        VerticalOptions="End"
                     />
                 </StackLayout>
             </Frame>
-
         </Grid>
     </ContentPage.Content>
 </services:BasePage>

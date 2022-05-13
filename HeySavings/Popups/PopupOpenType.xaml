@@ -13,7 +13,6 @@
         <pages:ScaleAnimation 
             PositionIn="Bottom"
             PositionOut="Bottom"
-           
             DurationIn="40"
             DurationOut="30"
             EasingIn="SinOut"
@@ -21,41 +20,32 @@
             />
     </pages:PopupPage.Animation>
     <Grid>
-
-  <Frame Padding="20" Margin="15,15,15,0"
+        <Frame Padding="20" Margin="15,15,15,0"
          CornerRadius="15"
          VerticalOptions="End">
-      <StackLayout>
-          <Button Text="Open Savings"
+            <StackLayout>
+                <Button Text="Open Savings"
                   TextColor="black"
                   CornerRadius="20"
                   BackgroundColor="#f9f906"
                   Command="{Binding OpenNextPage}"
                   CommandParameter="Savings"
                   />
-
-
-          <Button Text="Open Needs"
+                <Button Text="Open Needs"
                   TextColor="black"
                   CornerRadius="20"
                   BackgroundColor="#f9f906"
                   Command="{Binding OpenNextPage}"
                   CommandParameter="Needs"
                   />
-
-
-          <Button Text="Open Wants"
+                <Button Text="Open Wants"
                   TextColor="Black"
                   CornerRadius="20"
                   BackgroundColor="#f9f906"
                   CommandParameter="Wants"
                   Command="{Binding OpenNextPage}"
-
                   />
-
-      </StackLayout>
-
-  </Frame>
-        
+            </StackLayout>
+        </Frame>
     </Grid>
 </pages:PopupPage>

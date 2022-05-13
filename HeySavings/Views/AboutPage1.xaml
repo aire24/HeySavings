@@ -5,57 +5,45 @@
     BackgroundColor="White"
    xmlns:vm="clr-namespace:HeySavings.ViewModels" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Class="HeySavings.Views.AboutPage1">
-  <ContentPage.BindingContext>
+    <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.9*" />
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.5*" />
-
         </Grid.RowDefinitions>
-
-        
-            <pancake:PancakeView
+        <pancake:PancakeView
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Padding="0"
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
                VerticalOptions="FillAndExpand">
-            </pancake:PancakeView>
+        </pancake:PancakeView>
         <Label Grid.Row="0" Text="Our 50/30/20 application divides your take-home income into suggested spending in three categories: 50% of net pay for needs, 30% for wants and 20% for savings and debt repayment."
                Margin="20,40"
                TextColor="{StaticResource OffBlack}"
                FontFamily="LocalFont"
                FontSize="25"
                />
-
         <Grid VerticalOptions="EndAndExpand"
               HorizontalOptions="FillAndExpand">
-
         </Grid>
-
-       
-      
         <Label Grid.Row="2"
                TextColor="{StaticResource OffBlack}"
                HorizontalOptions="Center"
                FontFamily="LocalFont"
-
                VerticalOptions="End" FontSize="Large">
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="hey" FontAttributes="Bold" FontSize="40" FontFamily="LocalFont"/>
                     <Span Text="Savings" FontSize="35" FontFamily="LocalFont"/>
                 </FormattedString>
-                
             </Label.FormattedText>
         </Label>
-
         <ImageButton BackgroundColor="Transparent"
                      Grid.Row="3"
                      HorizontalOptions="End"
@@ -63,37 +51,29 @@
                      Margin="30"
                      Source="right_arrow"
                      Command="{Binding SecondPageCommand}"/>
-
-
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="End"
                      HorizontalOptions="Center"
-                      Grid.Row="3"
+                     Grid.Row="3"
                      Spacing="-10"
-                       Margin="10">
-       
-
-             <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-                    BorderColor="Black"
-               BackgroundColor="White"
-             />
-
-             <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-               BackgroundColor="Black"
-             />
-
+                     Margin="10">
             <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-                     BorderColor="Black"
-               BackgroundColor="White"
+                   Margin="10"
+                   CornerRadius="10"
+                   BorderColor="Black"
+                   BackgroundColor="White"
              />
-
+            <Frame Padding="4"
+                   Margin="10"
+                   CornerRadius="10"
+                   BackgroundColor="Black"
+             />
+            <Frame Padding="4"
+                   Margin="10"
+                   CornerRadius="10"
+                   BorderColor="Black"
+                   BackgroundColor="White"
+             />
         </StackLayout>
-            </Grid>
-
+    </Grid>
 </services:BasePage>

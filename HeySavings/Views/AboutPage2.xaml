@@ -13,108 +13,92 @@
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.5*" />
-
         </Grid.RowDefinitions>
-
-        
-            <pancake:PancakeView
+        <pancake:PancakeView
                 Grid.Row="0"
                 Grid.RowSpan="2"
                 Padding="0"
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
                VerticalOptions="FillAndExpand">
-            </pancake:PancakeView>
-       
-
+        </pancake:PancakeView>
         <StackLayout  VerticalOptions="End"
                      Margin="15,0,15,60"
                      Grid.RowSpan="2">
-             <Label Text="Before You Start"
+            <Label Text="Before You Start"
                     FontFamily="LocalFont"
                TextColor="{StaticResource OffBlack}"
                HorizontalOptions="Center"
                VerticalOptions="End" FontSize="35"/>
-<StackLayout Orientation="Horizontal" Margin="0,50,0,0" >
-<Label >
-    <Label.FormattedText>
-        <FormattedString>
-            <Span Text="1."
+            <StackLayout Orientation="Horizontal" Margin="0,50,0,0" >
+                <Label >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="1."
                   FontSize="20"
                   FontFamily="LocalFont"
                   TextColor="{StaticResource OffBlack}"/>
-            <Span Text=" Set Currency : "
+                            <Span Text=" Set Currency : "
                   FontSize="20"
                   FontFamily="LocalFont"
                   TextColor="{StaticResource OffBlack}"/>
-        </FormattedString>
-    </Label.FormattedText>
-    </Label>
-    <Frame Padding="0"
-           CornerRadius="10"
-           BorderColor="DarkGray"
-           HorizontalOptions="FillAndExpand">
-    <customcontrols:PickerTransparent
-        HorizontalTextAlignment="Center"
-        Margin="0,-7"
-        FontFamily="LocalFont"
-        SelectedIndex="{Binding Index}"
-            Title="Select Currency"
-            TitleColor="LightGray"
-            TextColor="Black"
-        FontAttributes="Bold">
-        <Picker.Items>
-            <x:String>LEI (RON)</x:String>
-            <x:String>€ (EURO)</x:String>
-
-        </Picker.Items>
-    </customcontrols:PickerTransparent>
-        </Frame>
-
-</StackLayout>
-
-
-<StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
-<Label >
-    <Label.FormattedText>
-        <FormattedString>
-            <Span Text="2."
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Frame Padding="0"
+               CornerRadius="10"
+               BorderColor="DarkGray"
+               HorizontalOptions="FillAndExpand">
+                    <customcontrols:PickerTransparent
+               HorizontalTextAlignment="Center"
+               Margin="0,-7"
+               FontFamily="LocalFont"
+               SelectedIndex="{Binding Index}"
+               Title="Select Currency"
+               TitleColor="LightGray"
+               TextColor="Black"
+               FontAttributes="Bold">
+                        <Picker.Items>
+                            <x:String>LEI (RON)</x:String>
+                            <x:String>€ (EURO)</x:String>
+                        </Picker.Items>
+                    </customcontrols:PickerTransparent>
+                </Frame>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                <Label >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="2."
                   FontSize="20"
                   TextColor="{StaticResource OffBlack}"
                   FontFamily="LocalFont"/>
-            <Span Text=" Set Budget    : "
+                            <Span Text=" Set Budget    : "
                   FontSize="20"
                   TextColor="{StaticResource OffBlack}"
                   FontFamily="LocalFont"/>
-        </FormattedString>
-    </Label.FormattedText>
-    </Label>
-    <Frame Padding="0"
-           CornerRadius="10"
-           BorderColor="DarkGray"
-           HorizontalOptions="FillAndExpand">
-    <customcontrols:BorderLessEntry
-        HorizontalTextAlignment="Center"
-        Margin="0,-5"
-        FontFamily="LocalFont"
-        Text="{Binding budget}"
-            Keyboard="Numeric"
-            TextColor="Black"
-        FontAttributes="Bold">
-       
-    </customcontrols:BorderLessEntry>
-        </Frame>
-
-</StackLayout>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Frame Padding="0"
+               CornerRadius="10"
+               BorderColor="DarkGray"
+               HorizontalOptions="FillAndExpand">
+                    <customcontrols:BorderLessEntry
+               HorizontalTextAlignment="Center"
+               Margin="0,-5"
+               FontFamily="LocalFont"
+               Text="{Binding budget}"
+               Keyboard="Numeric"
+               TextColor="Black"
+               FontAttributes="Bold">
+                    </customcontrols:BorderLessEntry>
+                </Frame>
+            </StackLayout>
         </StackLayout>
         <Grid VerticalOptions="EndAndExpand"
               HorizontalOptions="FillAndExpand">
-
         </Grid>
-
-
-      
-
         <Label Grid.Row="2"
                TextColor="{StaticResource OffBlack}"
                HorizontalOptions="Center"
@@ -124,10 +108,8 @@
                     <Span Text="hey" FontAttributes="Bold" FontSize="40" FontFamily="LocalFont"/>
                     <Span Text="Savings" FontSize="35" FontFamily="LocalFont"/>
                 </FormattedString>
-                
             </Label.FormattedText>
         </Label>
-
         <ImageButton BackgroundColor="Transparent"
                      Grid.Row="3"
                      HorizontalOptions="End"
@@ -135,60 +117,49 @@
                      Margin="30"
                      Source="right_arrow"
                      Command="{Binding ThriPageCommand}"/>
-
-
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="End"
                      HorizontalOptions="Center"
-                      Grid.Row="3"
+                     Grid.Row="3"
                      Spacing="-10"
-                       Margin="10">
-      
-
-             <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-                    BorderColor="Black"
-               BackgroundColor="White"
+                     Margin="10">
+            <Frame Padding="4"
+                   Margin="10"
+                   CornerRadius="10"
+                   BorderColor="Black"
+                   BackgroundColor="White"
              />
-
-             <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-                     BorderColor="Black"
-               BackgroundColor="White"
+            <Frame Padding="4"
+                   Margin="10"
+                   CornerRadius="10"
+                   BorderColor="Black"
+                   BackgroundColor="White"
              />
-
-              <Frame Padding="4"
-               Margin="10"
-               CornerRadius="10"
-               BackgroundColor="Black"
+            <Frame Padding="4"
+                   Margin="10"
+                   CornerRadius="10"
+                   BackgroundColor="Black"
              />
-
         </StackLayout>
-          <Grid
+        <Grid
                 VerticalOptions="FillAndExpand"
-                   Grid.RowSpan="4"
+                Grid.RowSpan="4"
                 IsVisible="{Binding isLoading}"
                 >
-                <StackLayout
+            <StackLayout
                      BackgroundColor="Black" 
-                         Opacity="0.5"
+                     Opacity="0.5"
                     ></StackLayout>
-                <StackLayout
-              
-                VerticalOptions="Center">
-                    <ActivityIndicator IsRunning="True"
-                                       HeightRequest="50"
-                                       
-                                       Margin="0,20,0,-5"/>   
+            <StackLayout
+                    VerticalOptions="Center">
+                <ActivityIndicator IsRunning="True"
+                                       HeightRequest="50"                   
+                                       Margin="0,20,0,-5"/>
                 <Label Text="Please Wait..."
                        FontFamily="LocalFont"
                        HorizontalTextAlignment="Center"
                        TextColor="Black"/>
-                </StackLayout>
-
-            </Grid>
-            </Grid>
-
+            </StackLayout>
+        </Grid>
+    </Grid>
 </services:BasePage>

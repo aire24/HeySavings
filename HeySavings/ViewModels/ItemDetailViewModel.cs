@@ -13,19 +13,16 @@ namespace HeySavings.ViewModels
         private string text;
         private string description;
         public string Id { get; set; }
-
         public string Text
         {
             get => text;
             set => SetProperty(ref text, value);
         }
-
         public string Description
         {
             get => description;
             set => SetProperty(ref description, value);
         }
-
         public string ItemId
         {
             get
@@ -38,7 +35,6 @@ namespace HeySavings.ViewModels
                 LoadItemId(value);
             }
         }
-
         public async void LoadItemId(string itemId)
         {
             try

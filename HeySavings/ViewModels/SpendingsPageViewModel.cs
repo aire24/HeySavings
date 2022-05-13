@@ -14,29 +14,24 @@ namespace HeySavings.ViewModels
             get { return lstSavings; }
             set { SetProperty(ref lstSavings, value); }
         }
-
-
         ObservableCollection<Spendings> lstNeeds;
         public ObservableCollection<Spendings> LstNeeds
         {
             get { return lstNeeds; }
             set { SetProperty(ref lstNeeds, value); }
         }
-
         ObservableCollection<string> _Years;
         public ObservableCollection<string> Years
         {
             get { return _Years; }
             set { SetProperty(ref _Years, value); }
         }
-
         ObservableCollection<Spendings> lstWants;
         public ObservableCollection<Spendings> LstWants
         {
             get { return lstWants; }
             set { SetProperty(ref lstWants, value); }
         }
-
         string _SelectedYear;
         public string SelectedYear
         {
@@ -44,9 +39,7 @@ namespace HeySavings.ViewModels
             set { SetProperty(ref _SelectedYear, value);
                 LoadList(); }
         }
-
         int _SelectedMonth;
-
         public int SelectedMonth
         {
             get { return _SelectedMonth; }
@@ -62,15 +55,12 @@ namespace HeySavings.ViewModels
             loaded = true;
             //LoadList();
         }
-
         string totalbudget;
         public string TotalBudget
         {
             get { return totalbudget; }
             set { SetProperty(ref totalbudget, value); }
         }
-
-
         bool loaded = false;
         public void LoadList()
         {
@@ -104,7 +94,6 @@ namespace HeySavings.ViewModels
                     LstNeeds = new ObservableCollection<Spendings>(temp.Where(x => x.type == Enums.SpendingType.Needs).ToList());
                     LstWants = new ObservableCollection<Spendings>(temp.Where(x => x.type == Enums.SpendingType.Wants).ToList());
                     LstSavings = new ObservableCollection<Spendings>(temp.Where(x => x.type == Enums.SpendingType.Savings).ToList());
-
                 }
             }
             catch (Exception ex)

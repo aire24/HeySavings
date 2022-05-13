@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:HeySavings.ViewModels"  
              xmlns:model="clr-namespace:HeySavings.Models"  
              x:Name="BrowseItemsPage">
-
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
     </ContentPage.ToolbarItems>
