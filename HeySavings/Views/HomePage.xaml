@@ -20,6 +20,9 @@
                        CornerRadius="20"
            BorderColor="DarkGray"
            HorizontalOptions="FillAndExpand">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding editBudget}"/>
+            </Frame.GestureRecognizers>
                     <StackLayout
                         Spacing="0">
     <customcontrols:BorderLessEntry
@@ -32,7 +35,9 @@
             Keyboard="Numeric"
             TextColor="Black"
         FontAttributes="Bold">
-       
+        <customcontrols:BorderLessEntry.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding editBudget}"/>
+            </customcontrols:BorderLessEntry.GestureRecognizers>
     </customcontrols:BorderLessEntry>
 
                  <Label Text="Total Budget"
@@ -42,7 +47,26 @@
                        FontFamily="LocalFont"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
-                       TextColor="{StaticResource OffBlack}"/>
+                       TextColor="{StaticResource OffBlack}">
+                      <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding editBudget}"/>
+            </Label.GestureRecognizers>
+                 </Label>
+
+                        <Label Text="{Binding BudgetExplain}"
+                       FontSize="16"
+                       Margin="0,-10,0,0"
+
+                       FontFamily="LocalFont"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}">
+                                 <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding editBudget}"/>
+            </Label.GestureRecognizers>
+                        </Label>
+
+
 </StackLayout>
         </Frame>
 
@@ -94,7 +118,44 @@
                           
                                               />
            
-          
+          <Grid BackgroundColor="Black" Opacity=".3" Grid.RowSpan="2" IsVisible="{Binding showEditBudget}">
+              <Grid.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding hideEdit}"/>
+              </Grid.GestureRecognizers>
+          </Grid>
+            <Frame Grid.RowSpan="2"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   CornerRadius="20"
+                   Padding="30,20"
+                   IsVisible="{Binding showEditBudget}"
+                 >
+                <StackLayout>
+                    <Label Text="Enter New Budget"
+                           FontFamily="LocalFont"
+                           FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       TextColor="{StaticResource OffBlack}"/>
+                    <Frame BorderColor="Black" Padding="5,0"
+                           CornerRadius="10">
+                    <customcontrols:BorderLessEntry Keyboard="Numeric"
+                                                    Text="{Binding newBudget}"
+                                                    TextColor="Black"
+                                                    HorizontalTextAlignment="Center"/>
+                    </Frame>
+                <Button CornerRadius="10"
+                        Margin="0,20"
+                    Text="update"
+                    Command="{Binding ResetBudget}"
+                    Padding="40,0"
+                    FontFamily="LocalFont"
+                    BackgroundColor="{StaticResource OffBlack}"
+                    VerticalOptions="End"
+                    />
+                </StackLayout>
+            </Frame>
+
         </Grid>
     </ContentPage.Content>
 </services:BasePage>

@@ -15,26 +15,20 @@
                
             </Grid.RowDefinitions>
 
-         
+
             <pancake:PancakeView
                 Grid.Row="0"
                 Padding="0"
                 BackgroundColor="#f9f906"
                 CornerRadius="0,0,72,72"
                VerticalOptions="FillAndExpand">
-                </pancake:PancakeView>
-
-            
-
-
+            </pancake:PancakeView>
             <StackLayout VerticalOptions="FillAndExpand" 
                   Margin="30,20,30,40"
                          Spacing="5"
                       >
                 <Label 
                        FontFamily="LocalFont"
-                       
-                       
                        
                        HorizontalTextAlignment="Center"
                        TextColor="{StaticResource OffBlack}"
@@ -48,8 +42,8 @@
                             <Span Text=" "/>
                             <Span Text="{Binding b.CurrencySymbol}"/>
                             <Span Text=")"/>
-
-
+                            <Span Text=" ("/>
+                            
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

@@ -31,14 +31,16 @@ namespace HeySavings.ViewModels
 
         public ProfileViewModel()
         {
-            b = App.Database.GetItem(App.login.id);
+            Load();
+        }
+
+        public void Load()
+        {
+            b = App.Database.getBudget(App.login.id);
             FirstName = App.login.firstname;
             LastName = App.login.lastname;
             Budget = b.budget;
-            
         }
-
-
         public Command UpdateProfile => new Command(() =>
         {
             try
